@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Fighter",
+        "description": "A strong and resilient warrior, the fighter is the defender of the people. The fighter excels in close combat, heavy armor, both offensive and defensive skills.",
+        "starting_stats": {
+            "health": 150,
+            "mana": 50,
+            "strength": 14,
+            "dexterity": 12,
+            "constitution": 15,
+            "wisdom": 8,
+            "intelligence": 8,
+            "charisma": 10
+        },
+        "starting_equipment": {
+            "weapon": "Iron Seif",
+            "offhand": "Hide Shield",
+            "body_armor": "Studded Leather Armor",
+            "helmet": "Iron Plated Helmet",
+            "accessory": "Sun Pendant"
+        },
+        "starting_skills": [
+            "Slash",
+            "Shield Bash"
+        ],
+        "unlockable_skills": [
+            {
+                "level": 3,
+                "choose_one": ["Power Strike", "Whirlwind"]
+            },
+            {
+                "level": 5,
+                "choose_one": ["", ""]
+            },
+            {
+                "level": 7,
+                "choose_one": ["", ""]
+            },
+            {
+                "level": 8,
+                "choose_one": ["", ""]
+            }
+        ],
+        "unlockable_classes": [
+            {
+                "level": null,
+                "quest_choice": "Rescued the horse merchant from the burning village",
+                "name": "Faris"
+            },
+            {
+                "level": 5,
+                "quest_choice": null,
+                "name": ""
+            }
+        ]
+    }
+
+]
