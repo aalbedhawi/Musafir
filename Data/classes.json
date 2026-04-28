@@ -1,6 +1,5 @@
-[
-    {
-        "name": "Fighter",
+{
+    "Fighter": {
         "description": "A strong and resilient warrior, the fighter is the defender of the people. The fighter excels in close combat, heavy armor, both offensive and defensive skills.",
         "starting_stats": {
             "health": 150,
@@ -26,19 +25,31 @@
         "unlockable_skills": [
             {
                 "level": 3,
-                "choose_one": ["Power Strike", "Whirlwind"]
+                "choose_one": [
+                    "Power Strike",
+                    "Whirlwind"
+                ]
             },
             {
                 "level": 5,
-                "choose_one": ["", ""]
+                "choose_one": [
+                    "",
+                    ""
+                ]
             },
             {
                 "level": 7,
-                "choose_one": ["", ""]
+                "choose_one": [
+                    "",
+                    ""
+                ]
             },
             {
                 "level": 8,
-                "choose_one": ["", ""]
+                "choose_one": [
+                    "",
+                    ""
+                ]
             }
         ],
         "unlockable_classes": [
@@ -54,5 +65,4 @@
             }
         ]
     }
-
-]
+}

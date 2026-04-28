@@ -1,9 +1,15 @@
- 
+import json
+import os
+
 class ClassLoader:
-    def _load_class_data(self, class_name):
+    def load_class_data(self, class_name):
         # TODO: load starting stats and skills from classes.json via a classloader
-        with open('classes.json') as f:
+        base_dir = os.path.dirname(__file__)
+        file_path = os.path.join(base_dir, '..', 'Data', 'classes.json')
+        with open(file_path) as f:
             # need to pull the key which is the class name
-            # Need to load the stats, skills, and other information for the class based on the name
-            # need to return this value so it can be used by the player class to set the character
-            pass 
+            class_data = json.load(f)
+            if class_name in class_data:
+                return class_data[class_name]
+            else:
+                raise ValueError(f"Class {class_name} not found in classes.json")
