@@ -1,15 +1,40 @@
 import json
 import os
+from skills import Skill
+
+class SkillLoader:
+    def __init__(self):
+        self.skills = {}
+        base_dir = os.path.dirname(__file__)
+        file_path = os.path.join(base_dir, '..', 'Data', 'skills.json')
+        with open(file_path) as f:
+            # need to pull the key, the skills name
+            skill_data = json.load(f)
+        for skill, skill_value in skill_data.items():
+            self.skills[skill] = Skill(skill, skill_value["description"], skill_value["effect"], skill_value["mana_cost"], skill_value["allowed_classes"])
+    
+    def load_skill_data(self, skill_name):
+        if skill_name in self.skills:
+            return self.skills[skill_name]
+        else:
+            raise ValueError(f"Skill: {skill_name} not found")
 
 class ClassLoader:
-    def load_class_data(self, class_name):
-        # TODO: load starting stats and skills from classes.json via a classloader
+    def __init__(self, skill_loader: SkillLoader):
+        self.skill_loader = skill_loader
         base_dir = os.path.dirname(__file__)
         file_path = os.path.join(base_dir, '..', 'Data', 'classes.json')
         with open(file_path) as f:
-            # need to pull the key which is the class name
             class_data = json.load(f)
-            if class_name in class_data:
-                return class_data[class_name]
-            else:
-                raise ValueError(f"Class {class_name} not found in classes.json")
+        self.class_data = class_data
+
+    def load_class_data(self, class_name):
+        starting_skills = {}
+        if class_name in self.class_data:
+            class_info = self.class_data[class_name]
+            for skill_name in class_info["starting_skills"]:
+                starting_skills[skill_name] = self.skill_loader.load_skill_data(skill_name)
+            class_info["starting_skills"] = starting_skills
+            return self.class_data[class_name]
+        else:
+            raise ValueError(f"Class {class_name} not found in classes.json")

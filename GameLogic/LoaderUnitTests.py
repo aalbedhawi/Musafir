@@ -1,8 +1,10 @@
-from Loaders import ClassLoader
+from Loaders import *
 
 class TestClassLoaders:
+    skill_loader = SkillLoader()
+
     def test_load_class_data(self):
-        loader = ClassLoader()
+        loader = ClassLoader(self.skill_loader)
         class_data = loader.load_class_data("Fighter")
         assert class_data["description"] == "A strong and resilient warrior, the fighter is the defender of the people. The fighter excels in close combat, heavy armor, both offensive and defensive skills."
         assert class_data["starting_stats"]["health"] == 150

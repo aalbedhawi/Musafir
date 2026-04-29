@@ -1,0 +1,52 @@
+{
+    "Slash":{
+        "description": "Slash an enemy",
+        "effect":{"damage": 5},
+        "mana_cost": 5,
+        "allowed_classes": ["Fighter", "Faris"] 
+    },
+    "Shield Bash":{
+        "description": "Bash an enemy and block damage from their next strike.",
+        "effect":{"damage": 3, "block": 3},
+        "mana_cost": 8,
+        "allowed_classes": ["Fighter", "Faris"] 
+    },
+    "Power Strike":{
+        "description": "Strike an enemy with the force of the Sultan!",
+        "effect":{"damage": 11},
+        "mana_cost": 7,
+        "allowed_classes": ["Fighter", "Faris"] 
+    },
+    "Sandstorm Strike":{
+        "description": "The desert is fierce during the day, strike an enemy with that ferocity.",
+        "effect":{"damage": 6, "burn": 4},
+        "mana_cost": 8,
+        "allowed_classes": ["Fighter", "Faris"] 
+    },
+    "Howl":{
+        "description": "Wolves call out to their prey before they strike",
+        "effect":{"area_of_effect": 4, "damage": 3},
+        "mana_cost": 4,
+        "allowed_classes": ["Fighter", "Faris"] 
+    },
+    "Taunt":{
+        "description": "Your enemy is enamored and infuriated by your insults",
+        "effect":{"slow": 2},
+        "mana_cost": 8,
+        "allowed_classes": ["Fighter", "Faris"] 
+    },
+    "Eye of Jaleel":{
+        "description": "Jaleel caught the eyes of all the world, yet only one caught the eye of the Great Djinn of Wealth, the Earth herself.",
+        "effect":{"area_of_effect": 4, "damage": 8, "slow": 1},
+        "mana_cost": 15,
+        "allowed_classes": ["Fighter"] 
+    },
+    "Crest of the Sun":{
+        "description": "The sun is the glorius bringer of life, the unrelenting truth of our kingdom, and the father of the desert!",
+        "effect":{"area_of_effect": 4, "burn": 8},
+        "mana_cost": 15,
+        "allowed_classes": ["Fighter"] 
+    }
+    
+    
+}

@@ -16,11 +16,12 @@ class Character:
         self.equipment = {
             "weapon": None,
             "offhand": None,
-            "body armor": None,
+            "body_armor": None,
             "helmet": None,
             "accessory": None
         }
         self.skills = {}
+        self.status_effects = {}
 
 class Player(Character):
     def __init__(self, name, class_type):

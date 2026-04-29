@@ -27,41 +27,28 @@
                 "level": 3,
                 "choose_one": [
                     "Power Strike",
-                    "Whirlwind"
+                    "Sandstorm Strike"
                 ]
             },
             {
                 "level": 5,
                 "choose_one": [
-                    "",
-                    ""
+                    "Howl",
+                    "Taunt"
                 ]
             },
             {
                 "level": 7,
                 "choose_one": [
-                    "",
-                    ""
-                ]
-            },
-            {
-                "level": 8,
-                "choose_one": [
-                    "",
-                    ""
+                    "Eye of Jaleel",
+                    "Crest of the Sun"
                 ]
             }
         ],
         "unlockable_classes": [
             {
-                "level": null,
                 "quest_choice": "Rescued the horse merchant from the burning village",
                 "name": "Faris"
-            },
-            {
-                "level": 5,
-                "quest_choice": null,
-                "name": ""
             }
         ]
     }
