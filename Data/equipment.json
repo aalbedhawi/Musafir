@@ -1,0 +1,39 @@
+{
+    "Iron Seif": {
+        "description": "The typical armament for any warrior or traveler in the lands of Amel.",
+        "slot": "weapon",
+        "requirements": {"strength": 12},
+        "effect": {"damage": 5},
+        "gold_value": 2
+    },
+    "Hide Shield": {
+        "description": "A common shield made of hippo hide.",
+        "slot": "offhand",
+        "requirements": {"strength": 10},
+        "effect": {"armor": 1},
+        "gold_value": 1
+    },
+    "Studded Leather Armor": {
+        "description": "Hide armor studded with solid iron caps improving resistance to strikes.",
+        "slot": "body_armor",
+        "requirements": {"strength": 12},
+        "effect": {"armor": 4, "health": 15},
+        "gold_value": 4
+    },
+    "Iron Plated Helmet": {
+        "description": "The standard issued helmet for soldiers and mercenaries alike.",
+        "slot": "helmet",
+        "requirements": {"strength": 13},
+        "effect": {"armor": 2},
+        "gold_value": 1
+    },
+    "Sun Pendant": {
+        "description": "The sun, oh if only you knew what the world was like before the sun, an unending despair of cold and misery.",
+        "slot": "accessory",
+        "requirements": null,
+        "effect": {"strength": 1},
+        "gold_value": 20
+    }
+
+
+}

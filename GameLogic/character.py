@@ -12,6 +12,7 @@ class Character:
         self.intelligence = 0
         self.charisma = 0
         self.constitution = 0
+        self.armor = 0
         self.gold = 0
         self.equipment = {
             "weapon": None,
