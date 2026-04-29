@@ -1,0 +1,118 @@
+{
+    "Desert Bandit": {
+        "description": "Turned to a life of robbery and treachery, they prey on the unsuspecting using the mirages of the desert for advantage.",
+        "enemy_type": "Human",
+        "starting_stats": {
+            "health": 70,
+            "mana": 30,
+            "strength": 11,
+            "dexterity": 8,
+            "constitution": 10,
+            "wisdom": 6,
+            "intelligence": 8,
+            "charisma": 6
+        },
+        "equipment": {
+            "weapon": "Iron Seif",
+            "offhand": "Plank Shield",
+            "body_armor": "Leather Armor",
+            "helmet": "Sandy Turban",
+            "accessory": null
+        },
+        "skills": [
+            "Slash",
+            "Block",
+            "Sand Throw"
+        ],
+        "experience_reward": 5,
+        "gold": 2
+    },
+        "Desert Warlord": {
+        "description": "Leaders of clans of roving hostile nomads and bandits alike, they earned their place by strength and keep it by savagery.",
+        "enemy_type": "Human",
+        "starting_stats": {
+            "health": 170,
+            "mana": 50,
+            "strength": 14,
+            "dexterity": 10,
+            "constitution": 12,
+            "wisdom": 8,
+            "intelligence": 8,
+            "charisma": 12
+        },
+        "equipment": {
+            "weapon": "Steel Seif",
+            "offhand": "Studded Hide Shield",
+            "body_armor": "Desert Armor",
+            "helmet": "Steel Turban",
+            "accessory": "Khanjar"
+        },
+        "skills": [
+            "Khanjar Throw",
+            "Dynamic Assault",
+            "Desert's Wrath"
+        ],
+        "experience_reward": 15,
+        "gold": 25
+    },
+        "Giant Scorpion": {
+        "description": "Studded with gold and jewels, these scorpions wander the grand deserts of Amel, feasting on travelers and their own kin alike.",
+        "enemy_type": "Beast",
+        "starting_stats": {
+            "health": 100,
+            "mana": 0,
+            "strength": 11,
+            "dexterity": 15,
+            "constitution": 13,
+            "wisdom": 2,
+            "intelligence": 3,
+            "charisma": 4
+        },
+        "equipment": {
+            "weapon": null,
+            "offhand": null,
+            "body_armor": null,
+            "helmet": null,
+            "accessory": null
+        },
+        "skills": [
+            "Bite",
+            "Skewer",
+            "Venomous Sting"
+        ],
+        "experience_reward": 7,
+        "gold": 4
+    },
+        "Lesser Djinn": {
+        "description": "These creatures live amongst humanity but must not interact with them, or humanity interact with djinns. When a djinn breaks this ancient accord from on high they are cast out from the light of grace and thrown to the world where their evil intent manifests them to humans.",
+        "enemy_type": "Djinn",
+        "starting_stats": {
+            "health": 200,
+            "mana": 70,
+            "strength": 10,
+            "dexterity": 12,
+            "constitution": 13,
+            "wisdom": 12,
+            "intelligence": 17,
+            "charisma": 15
+        },
+        "equipment": {
+            "weapon": "Faas",
+            "offhand": "Djinn Tablet",
+            "body_armor": null,
+            "helmet": null,
+            "accessory": "Gold Ring"
+        },
+        "skills": [
+            "Curse",
+            "Blind",
+            "Sun Ray",
+            "Lesser Wish"
+        ],
+        "experience_reward": 20,
+        "gold": 20
+    }
+
+
+
+}
