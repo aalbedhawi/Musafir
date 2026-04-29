@@ -1,4 +1,4 @@
-from Loaders import *
+from Loaders import SkillLoader, ClassLoader
 
 class TestClassLoaders:
     skill_loader = SkillLoader()
