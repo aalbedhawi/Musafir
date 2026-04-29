@@ -31,10 +31,10 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: ${{ github.event_name != 'pull_request' }}
-          tags: aalbedhawi/musafir-loaders:latest
+          tags: aalbedhawi/musafir:latest
       
       - name: Run Docker Image
-        run: docker run aalbedhawi/musafir-loaders:latest
+        run: docker run aalbedhawi/musafir:latest pytest GameLogic/test_loaders.py
         
       - name: send alert on failure to discord channel
         uses: tsickert/discord-webhook@v7.0.0
@@ -42,6 +42,3 @@ jobs:
         with:
           content: "Build Failed, please fix pipeline"
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-    
-
-    
