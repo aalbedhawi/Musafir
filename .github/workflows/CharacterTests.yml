@@ -1,13 +1,9 @@
-name: Loaders
+name: Characters
 on:
   push:
     branches: [ "main" ]
     paths:
-      - GameLogic/Loaders.py
-      - GameLogic/test_loaders.py
-      - Data/classes.json
-      - Data/equipment.json
-      - Data/skills.json
+      - GameLogic/Character.py
 
   workflow_dispatch: 
 
@@ -34,7 +30,7 @@ jobs:
           tags: aalbedhawi/musafir:latest
       
       - name: Run Docker Image
-        run: docker run aalbedhawi/musafir:latest pytest GameLogic/test_loaders.py
+        run: docker run aalbedhawi/musafir:latest
         
       - name: send alert on failure to discord channel
         uses: tsickert/discord-webhook@v7.0.0
