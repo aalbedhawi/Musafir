@@ -2,6 +2,12 @@ name: Loaders
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - GameLogic/Loaders.py
+      - GameLogic/test_loaders.py
+      - Data/classes.json
+      - Data/equipment.json
+      - Data/skills.json
 
   workflow_dispatch: 
 
