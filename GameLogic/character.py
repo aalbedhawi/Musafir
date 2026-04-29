@@ -1,3 +1,5 @@
+from Loaders import ClassLoader
+
 class Character:
     def __init__(self, name):
         self.name = name
@@ -25,13 +27,21 @@ class Character:
         self.status_effects = {}
 
 class Player(Character):
-    def __init__(self, name, class_type):
+    def __init__(self, name, class_type, class_loader: ClassLoader):
         super().__init__(name)
+        self.class_loader = class_loader
         self.class_type = class_type
         self.experience = 0
         self.experience_to_next_level = 100
         self.inventory = {}
-        self._load_class_data()
+        self.player_class = self.class_loader.load_class_data(self.class_type)
+        for attribute, value in self.player_class.items():
+            if attribute in ["starting_skills", "starting_equipment"]:
+                continue
+            else:
+                setattr(self, attribute, value)
+        self.equipment = self.player_class["starting_equipment"]
+        self.skills = self.player_class["starting_skills"]
 
 class Enemy(Character):
     def __init__(self, name, enemy_type):
