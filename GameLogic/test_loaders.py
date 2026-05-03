@@ -1,6 +1,7 @@
-from Loaders import SkillLoader, EquipmentLoader, ClassLoader
-from unittest.mock import patch
 import unittest
+from loaders import SkillLoader, EquipmentLoader, ClassLoader, EnemyLoader
+from unittest.mock import patch
+from exceptions import EntryNotFoundError
 
 class TestSkillLoader(unittest.TestCase):
     fake_skill = {
@@ -25,7 +26,7 @@ class TestSkillLoader(unittest.TestCase):
         assert skill.name == "Slash"
     
     def test_skill_error(self):
-        self.assertRaises(ValueError, self.skill_loader.load_skill_data, "Slash a enemy")
+        self.assertRaises(EntryNotFoundError, self.skill_loader.load_skill_data, "Slash a enemy")
 
 class TestEquipmentLoader(unittest.TestCase):
     fake_equipment = {
@@ -52,7 +53,7 @@ class TestEquipmentLoader(unittest.TestCase):
         assert equipment.name == "Iron Seif"
 
     def test_equipment_error(self):
-        self.assertRaises(ValueError, self.equipment_loader.load_equipment_data, "wepon")
+        self.assertRaises(EntryNotFoundError, self.equipment_loader.load_equipment_data, "wepon")
 
 class TestClassLoader(unittest.TestCase):
     fake_equipment = {
@@ -130,8 +131,99 @@ class TestClassLoader(unittest.TestCase):
         assert equipment.name == "Iron Seif"
 
     def test_loadclassdata_error(self):
-        self.assertRaises(ValueError, self.class_loader.load_class_data, "Fightr")
+        self.assertRaises(EntryNotFoundError, self.class_loader.load_class_data, "Fightr")
 
+class TestEnemyLoader(unittest.TestCase):
+    fake_skill = {
+        "Slash": {
+            "description": "Slash an enemy",
+            "effect": {"damage": 5},
+            "mana_cost": 5,
+        }
+    }
+
+    fake_equipment = {
+        "Iron Seif": {
+            "description": "The typical armament for any warrior or traveler in the lands of Amel.",
+            "slot": "weapon",
+            "requirements": {"strength": 12},
+            "effect": {"damage": 5},
+            "gold_value": 2
+        }
+    }
+
+    fake_enemy = {
+        "Desert Bandit": {
+            "description": "Turned to a life of robbery and treachery, they prey on the unsuspecting using the mirages of the desert for advantage.",
+            "enemy_type": "Human",
+            "starting_stats": {
+                "health": 70,
+                "mana": 30,
+                "strength": 11,
+                "dexterity": 8,
+                "constitution": 10,
+                "wisdom": 6,
+                "intelligence": 8,
+                "charisma": 6
+            },
+            "equipment": {
+                "weapon": "Iron Seif",
+                "accessory": None
+            },
+            "skills": [
+                "Slash",
+            ],
+            "experience_reward": 5,
+            "gold": 2
+        }
+    }
+
+    def setUp(self):
+        with patch("json.load", side_effect=[self.fake_skill, self.fake_equipment, self.fake_enemy]):
+            self.skill_loader = SkillLoader()
+            self.equipment_loader = EquipmentLoader()
+            self.enemy_loader = EnemyLoader(self.skill_loader, self.equipment_loader)
+
+    def test_load_enemy_data(self):
+        enemy_data = self.enemy_loader.load_enemy_data("Desert Bandit")
+        skill_slash = enemy_data["skills"]["Slash"]
+        equipment_weapon = enemy_data["equipment"]["weapon"]
+
+        assert enemy_data["description"] == "Turned to a life of robbery and treachery, they prey on the unsuspecting using the mirages of the desert for advantage."
+        assert enemy_data["enemy_type"] == "Human"
+        assert enemy_data["starting_stats"]["health"] == 70
+        assert enemy_data["starting_stats"]["mana"] == 30
+        assert enemy_data["starting_stats"]["strength"] == 11
+        assert enemy_data["starting_stats"]["dexterity"] == 8
+        assert enemy_data["starting_stats"]["constitution"] == 10
+        assert enemy_data["starting_stats"]["wisdom"] == 6
+        assert enemy_data["starting_stats"]["intelligence"] == 8
+        assert enemy_data["starting_stats"]["charisma"] == 6
+        assert enemy_data["experience_reward"] == 5
+        assert enemy_data["gold"] == 2
+        assert skill_slash.description == "Slash an enemy"
+        assert skill_slash.mana_cost == 5
+        assert skill_slash.effect == {"damage": 5}
+        assert skill_slash.name == "Slash"
+        assert equipment_weapon.description == "The typical armament for any warrior or traveler in the lands of Amel."
+        assert equipment_weapon.slot == "weapon"
+        assert equipment_weapon.requirements == {"strength": 12}
+        assert equipment_weapon.effect == {"damage": 5}
+        assert equipment_weapon.gold_value == 2
+        assert equipment_weapon.name == "Iron Seif"
+
+    def test_load_enemy_data_with_null_equipment(self):
+        enemy_data = self.enemy_loader.load_enemy_data("Desert Bandit")
+        accessory_slot = enemy_data["equipment"]["accessory"]
+
+        assert accessory_slot is not None
+        assert accessory_slot.slot == "accessory"
+        assert accessory_slot.name is None
+        assert accessory_slot.description is None
+        assert accessory_slot.effect is None
+
+    def test_load_enemy_data_error(self):
+        self.assertRaises(EntryNotFoundError, self.enemy_loader.load_enemy_data, "NonExistentEnemy")
 
 
 if __name__ == "__main__":

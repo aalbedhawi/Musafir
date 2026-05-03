@@ -1,4 +1,4 @@
-from Loaders import ClassLoader
+from loaders import ClassLoader, EnemyLoader
 
 class Character:
     def __init__(self, name):
@@ -44,7 +44,16 @@ class Player(Character):
         self.skills = self.player_class["starting_skills"]
 
 class Enemy(Character):
-    def __init__(self, name, enemy_type):
+    def __init__(self, name, enemy_type, enemy_loader: EnemyLoader):
         super().__init__(name)
+        self.enemy_loader = enemy_loader
         self.enemy_type = enemy_type
         self.experience_reward = 0
+        self.enemy = self.enemy_loader.load_enemy_data(self.name)
+        for attribute, value in self.enemy.items():
+            if attribute in ["skills", "equipment"]:
+                continue
+            else:
+                setattr(self, attribute, value)
+        self.equipment = self.enemy["equipment"]
+        self.skills = self.enemy["skills"]
