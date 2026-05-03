@@ -79,7 +79,7 @@ class EnemyLoader:
             for skill_name in enemy_info["skills"]:
                 skills[skill_name] = self.skill_loader.load_skill_data(skill_name)
             for slot, equipment_name in enemy_info["equipment"].items():
-                if equipment_name == None:
+                if equipment_name is None:
                     equipment[slot] = Equipment.empty_slot(slot)
                 else:
                     equipment[slot] = self.equipment_loader.load_equipment_data(equipment_name)
