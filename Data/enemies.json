@@ -111,6 +111,266 @@
         ],
         "experience_reward": 20,
         "gold": 20
+    },
+        "Ghoul": {
+        "description": "Born of corruption, humans that turn their back on Illar and towards the darkness of other ancients, they become these aberrations.",
+        "enemy_type": "Aberration",
+        "starting_stats": {
+            "health": 200,
+            "mana": 90,
+            "strength": 17,
+            "dexterity": 14,
+            "constitution": 12,
+            "wisdom": 7,
+            "intelligence": 7,
+            "charisma": 4
+        },
+        "equipment": {
+            "weapon": null,
+            "offhand": null,
+            "body_armor": "Leather Armor",
+            "helmet": "Cursed Steel Helmet",
+            "accessory": "Ring Of Despair"
+        },
+        "skills": [
+            "Bite",
+            "Ghoul Fever",
+            "Lunge"
+        ],
+        "experience_reward": 20,
+        "gold": 15
+    },
+        "Djinn": {
+        "description": "These Djinn have made trades of wishes with humans beyond the veil bringing them and anchoring these evil creatures to the mortal plane.",
+        "enemy_type": "Djinn",
+        "starting_stats": {
+            "health": 300,
+            "mana": 120,
+            "strength": 12,
+            "dexterity": 13,
+            "constitution": 16,
+            "wisdom": 16,
+            "intelligence": 18,
+            "charisma": 15
+        },
+        "equipment": {
+            "weapon": "Gilded Faas",
+            "offhand": "Gold Shield",
+            "body_armor": "Flame Touched Mantle",
+            "helmet": "Flame Touched Turban",
+            "accessory": "Mark Of Submission"
+        },
+        "skills": [
+            "Flame Blast",
+            "Heavy Strike",
+            "Ignition",
+            "Wish"
+        ],
+        "experience_reward": 50,
+        "gold": 50
+    },
+        "Curse Touched Human": {
+        "description": "A human who traded some part or all of their soul to a djinn in exchange for power, their skin shows fissures of purple malevolence.",
+        "enemy_type": "Human",
+        "starting_stats": {
+            "health": 220,
+            "mana": 90,
+            "strength": 14,
+            "dexterity": 10,
+            "constitution": 13,
+            "wisdom": 8,
+            "intelligence": 8,
+            "charisma": 8
+        },
+        "equipment": {
+            "weapon": "Steel Scimitar",
+            "offhand": "Steel Shield",
+            "body_armor": "Steel Plate Armor",
+            "helmet": "Steel Plate Helmet",
+            "accessory": null
+        },
+        "skills": [
+            "Strike",
+            "Block",
+            "Imbue Hex"
+        ],
+        "experience_reward": 15,
+        "gold": 50
+    },
+        "Cursed Soul": {
+        "description": "Cursed in life for trading their soul, this spirit has no afterlife to transcend to and now roams the mortal planes forevermore.",
+        "enemy_type": "Undead",
+        "starting_stats": {
+            "health": 250,
+            "mana": 200,
+            "strength": 7,
+            "dexterity": 7,
+            "constitution": 7,
+            "wisdom": 14,
+            "intelligence": 14,
+            "charisma": 10
+        },
+        "equipment": {
+            "weapon": null,
+            "offhand": null,
+            "body_armor": null,
+            "helmet": null,
+            "accessory": null
+        },
+        "skills": [
+            "Drain",
+            "Curse",
+            "Wail",
+            "Screech"
+        ],
+        "experience_reward": 30,
+        "gold": 15
+    },
+        "Greater Djinn": {
+        "description": "Djinn who have been around since the dawn of time, they were created at the time of the great spark , while those who do good stay behind the veil of mortal planes, those who manifest between both harbor both great wickedness and power.",
+        "enemy_type": "Djinn",
+        "starting_stats": {
+            "health": 350,
+            "mana": 300,
+            "strength": 13,
+            "dexterity": 13,
+            "constitution": 16,
+            "wisdom": 18,
+            "intelligence": 20,
+            "charisma": 18
+        },
+        "equipment": {
+            "weapon": "Cursed Seif",
+            "offhand": "Cursed Khandjar",
+            "body_armor": "Flame Forged Armor",
+            "helmet": "Meteorite Helmet",
+            "accessory": "Fragment Of The Spark"
+        },
+        "skills": [
+            "Greater Wish",
+            "Darkness",
+            "Flare",
+            "Chains Of The Cosmos"
+        ],
+        "experience_reward": 100,
+        "gold": 100
+    },
+        "Bel-Khatar": {
+        "description": "A grotesque creature that resembles a writhing worm with a hawk's head. Bel-Khatar is said to lurk beneath the darkness that the sands rest upon. Woe unto him who encounters Bel-Khatar, for he is likely to perish.",
+        "enemy_type": "Aberration",
+        "starting_stats": {
+            "health": 500,
+            "mana": 100,
+            "strength": 18,
+            "dexterity": 18,
+            "constitution": 14,
+            "wisdom": 8,
+            "intelligence": 10,
+            "charisma": 5
+        },
+        "equipment": {
+            "weapon": null,
+            "offhand": null,
+            "body_armor": null,
+            "helmet": "The Crested Dark",
+            "accessory": "Eye Of Darkness"
+        },
+        "skills": [
+            "Cackle",
+            "Writhing Mass",
+            "Bane",
+            "Devour"
+        ],
+        "experience_reward": 150,
+        "gold": 100
+    },
+        "Cultist of Saqaal": {
+        "description": "Followers of Saqaal, they wish to summon Ifrit to the world in exchange for Wishes of The Unbound. They have members in every facet of civilization.",
+        "enemy_type": "Human",
+        "starting_stats": {
+            "health": 500,
+            "mana": 250,
+            "strength": 16,
+            "dexterity": 16,
+            "constitution": 18,
+            "wisdom": 18,
+            "intelligence": 16,
+            "charisma": 20
+        },
+        "equipment": {
+            "weapon": "Runic Sword",
+            "offhand": "Relic Of The Bound One",
+            "body_armor": "Runic Armor",
+            "helmet": "Runic Helmet",
+            "accessory": "Tears Of Illar"
+        },
+        "skills": [
+            "Runic Strike",
+            "Decompose",
+            "Guile",
+            "Fear"
+        ],
+        "experience_reward": 150,
+        "gold": 150
+    },
+        "Saqaal": {
+        "description": "While many know Saqaal as a wise and tempered philosopher, few know of his devotion to the Djinn That Is Bound. Saqaal has spent his time biding his actions until he could begin the rituals to unleash The Bound One.",
+        "enemy_type": "Human",
+        "starting_stats": {
+            "health": 1000,
+            "mana": 600,
+            "strength": 10,
+            "dexterity": 10,
+            "constitution": 20,
+            "wisdom": 22,
+            "intelligence": 24,
+            "charisma": 22
+        },
+        "equipment": {
+            "weapon": "Staff of Temporalis",
+            "offhand": "Ifrit's Blessing",
+            "body_armor": "Garb of Saqaal",
+            "helmet": "Helmet of Saqaal",
+            "accessory": "Tome of The Bound One"
+        },
+        "skills": [
+            "Call To The Void",
+            "Temporal Chains",
+            "Beckon Of The Bound One",
+            "Unending Darkness"
+        ],
+        "experience_reward": 1000,
+        "gold": 500
+    },
+        "Ifrit": {
+        "description": "The Bound One, Father Of Fire, He Who Can Undo Reality, Ifrit is an Ancient. Ifrit was he who reduced the world of Elia to an undending black fire, the flames of which inflicted unending despair. Unlike djinn and lesser creatures, Ancients have no pacts, no recourse if they wish something to be. Man's only recompense is the hope and faith that Illar protects them from any evils.",
+        "enemy_type": "Ancient",
+        "starting_stats": {
+            "health": 2000,
+            "mana": 1000,
+            "strength": 25,
+            "dexterity": 25,
+            "constitution": 25,
+            "wisdom": 28,
+            "intelligence": 30,
+            "charisma": 28
+        },
+        "equipment": {
+            "weapon": "Wishmaker",
+            "offhand": "Clasps Of Arrogance",
+            "body_armor": "Heart Of Blackfire",
+            "helmet": "Coil Of The Bound Flame",
+            "accessory": "The Dark Flame"
+        },
+        "skills": [
+            "Disintegration",
+            "Unbound Wish",
+            "Incineration",
+            "Conflagaration",
+            "Ruins of Elia"
+        ],
+        "experience_reward": null,
+        "gold": null
     }
 
 
