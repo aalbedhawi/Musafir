@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - GameLogic/Loaders.py
+      - GameLogic/loaders.py
       - GameLogic/test_loaders.py
       - Data/classes.json
       - Data/equipment.json
