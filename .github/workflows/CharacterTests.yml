@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - GameLogic/Character.py
+      - GameLogic/character.py
 
   workflow_dispatch: 
 
