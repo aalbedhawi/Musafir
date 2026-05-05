@@ -38,7 +38,10 @@ class Player(Character):
         for attribute, value in self.player_class.items():
             if attribute in ["starting_skills", "starting_equipment"]:
                 continue
-            else:
+            elif attribute == "starting_stats":
+                for stat, stat_value in value.items():
+                    setattr(self, attribute, value)
+            else: 
                 setattr(self, attribute, value)
         self.equipment = self.player_class["starting_equipment"]
         self.skills = self.player_class["starting_skills"]
